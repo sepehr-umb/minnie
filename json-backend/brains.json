@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "student": "alice",
+    "last_saved": "2026-04-14T17:41:33.710356+00:00"
+  },
+  "progress": {
+    "current_step": 2,
+    "total_steps": 2,
+    "completed_steps": [
+      1
+    ],
+    "last_exit_code": 0
+  },
+  "steps": [
+    {
+      "id": 1,
+      "title": "Create your first file",
+      "instructions": "Run: touch hello.txt",
+      "completed": true,
+      "completed_at": "2026-03-31T13:05:00",
+      "validation": {
+        "type": "inotifywait",
+        "target_file": "hello.txt",
+        "check": "exists"
+      },
+      "hints": [
+        "Try using the 'touch' command followed by a filename.",
+        "Make sure you are in the correct directory."
+      ],
+      "error_patterns": [
+        "command not found",
+        "No such file"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Start a web server",
+      "instructions": "Run: python3 -m http.server 8080",
+      "completed": false,
+      "completed_at": null,
+      "validation": {
+        "type": "curl_probe",
+        "url": "http://localhost:8080",
+        "expected_status": 200
+      },
+      "hints": [
+        "Use python3 -m http.server followed by a port number.",
+        "Check that port 8080 is not already in use."
+      ],
+      "error_patterns": [
+        "Connection refused",
+        "Address already in use"
+      ]
+    }
+  ],
+  "session": {
+    "ssh_login_count": 3,
+    "command_history": [
+      "ls",
+      "touch hello.txt",
+      "cd hello_project/"
+    ],
+    "dirty": false
+  }
+}
