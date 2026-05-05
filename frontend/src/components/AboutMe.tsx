@@ -31,7 +31,6 @@ const AboutMe = () => {
       <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
         Meet the Team
       </h2>
-
       <ul style={{ listStyle: "none", padding: 0 }}>
         {team.map((member, index) => (
           <li
@@ -44,7 +43,7 @@ const AboutMe = () => {
             }}
           >
             <span>{member.name}</span>
-            <a
+            
               href={member.linkedin}
               target="_blank"
               rel="noopener noreferrer"
